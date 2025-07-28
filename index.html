@@ -7,8 +7,59 @@
 </head>
 <body>
     <h1>Risa Tobin</h1>
+    <div class="tab-container">
+  <div class="tab-buttons">
+    <button class="tab-button active" onclick="openTab(event, 'tab1-content')">Tab 1 Title</button>
+    <button class="tab-button" onclick="openTab(event, 'tab2-content')">Tab 2 Title</button>
+    <button class="tab-button" onclick="openTab(event, 'tab3-content')">Tab 3 Title</button>
+  </div>
+  <div id="tab1-content" class="tab-content">
+    <h3>Content for Tab 1</h3>
+    <p>This is the content that will be displayed when Tab 1 is active.</p>
+  </div>
+  <div id="tab2-content" class="tab-content" style="display: none;">
+ <h3>Resume</h3>
+<iframe width="100%" height="100%" src="https://docs.google.com/document/d/e/2PACX-1vS0TfIXMzR0WO3oYnIfvYo1V_GgSjvRq2yvQyYklpmV15E7_EZ04vs9zCaZK1Dewowe9MU-QcCmEieG/pub?embedded=true"></iframe>
+  </div>
+  <div id="tab3-content" class="tab-content" style="display: none;">
+    <h3>Content for Tab 3</h3>
+    <p>This is the content for Tab 3.</p>
+  </div>
+</div>
+
+
+
+
+
+
+
+      <!-- Tab buttons -->
+  <div class="tab">
+    <button class="tablinks" onclick="openpage (event, 'Resume')">Resume</button>
+    <!-- Tab content -->
+<div id="Resume" class="tabcontent">
+
+</div>
     <p>Risa is an undergraduate student completing a Bachelor's of Music from McGill Univeristy. She has been playing trumpet for 11 years and has performed with groups such as the All-Eastern Orchestra and McGill Wind Orchestra. Alongside her passion for performance, Risa is deeply interested in how music affects cognitive processes. Through her work with the Yale Alzheimer's Disease Research Center, and Belief Lab she has been able to explore these topics.   </p>
-    <!--place holding image--> <img src=https://ibb.co/j929fk4Y width="500" height="300" style="border: 1px solid black; margin: 10px;">
-    <a href="https://www.youtube.com/watch?v=r475RwT3vx4&ab_channel=MatthewRoome">Walter S. Hartley Double Quartet</a>
+    <!--place holding image--> <img src="photos/IMG_8645-preview.jpg" width="500" height="300" style="border: 1px solid black; margin: 10px;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/r475RwT3vx4?si=kZ93hHNZVv9Emrjx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </body>
+<script>
+  function openTab(event, tabId) {
+    // Hide all tab content
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabContents.forEach(content => {
+        content.style.display = 'none';
+    });
+    // Remove active class from all tab buttons
+    const tabButtons = document.querySelectorAll('.tab-button');
+    tabButtons.forEach(button => {
+        button.classList.remove('active');
+    });
+    // Show the selected tab content
+    document.getElementById(tabId).style.display = 'block';
+    // Add active class to the clicked button
+    event.currentTarget.classList.add('active');
+}
+</script>
 </html>
