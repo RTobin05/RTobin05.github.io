@@ -4,7 +4,13 @@ body {
      color: rgb(0, 0, 0);
      text-align: center;
     margin: 100px;
+.button {
+  background-color: #625f6e; /* Gray */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
-/* h1 {
-    color: rgb( 0, 0, 0)
-} */
