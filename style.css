@@ -1,16 +1,72 @@
-
+/* 1) Zero-out browser defaults */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 body {
-    background-color: rgb(149, 113, 178);
-     color: rgb(0, 0, 0);
-     text-align: center;
-    margin: 100px;
-.button {
-  background-color: #625f6e; /* Gray */
-  border: none;
-  color: white;
-  padding: 15px 32px;
+  margin: 0;
+  padding: 0 1rem;            /* breathing room */
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  background-color: rgb(149, 113, 178);
+  color: #dfd3d3;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+}
+
+/* 2) Container centering and width constraints */
+.main-container {
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 200px;
+}
+
+/* 3) Tab bar: horizontal scroll — mobile first */
+.tab-buttons {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  justify-content: flex-start;   /* ensures left-aligned scroll¹ */
+}
+.tab-buttons::-webkit-scrollbar {
+  display: none;  /* mobile-friendly scrollbar hiding */
+}
+
+/* 4) Tab button sizing — flexible */
+.tab-button {
+  flex: 1 0 min(160px, 25%);
+  padding: 0.75rem 1rem;
+  margin: 0.25rem;
+  background-color: #625f6e;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+.tab-button.active {
+  border-bottom: 3px solid #fff;
+  font-weight: bold;
+}
+
+/* 5) Tab content panels, fluid resizes */
+.tab-content {
+  margin-top: 1rem;
+}
+.tab-content img,
+.tab-content iframe {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 100%;
+}
+
+/* 6) Tablet and up: tabs align in row, no scroll */
+@media (min-width: 768px) {
+  .tab-buttons {
+    justify-content: center;
+  }
+  .tab-button {
+    flex: 0 1 auto;
+    margin: 0 0.5rem;
+  }
 }
