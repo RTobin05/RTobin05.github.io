@@ -8,8 +8,9 @@ body {
   margin: 0;
   padding: 0 1rem;            /* breathing room */
   font-size: clamp(1rem, 1.2vw, 1.2rem);
-  background-color: rgb(149, 113, 178);
-  color: #dfd3d3;
+  background-color: rgb(56, 54, 58);
+  color: #b8abab;
+  font-family: 'Eb Garamond', sans-serif ;
   text-align: center;
 }
 
@@ -52,12 +53,16 @@ body {
 .tab-content {
   margin-top: 1rem;
 }
-.tab-content img,
-.tab-content iframe {
+.tab-content img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   max-width: 100%;
+}
+
+.tab-content iframe {
+  width: 100%;
+  height: 500px;
 }
 
 /* 6) Tablet and up: tabs align in row, no scroll */
